@@ -29,6 +29,6 @@ func GetDB(host string, port int, user string, password string, dbname string) (
 	fmt.Println("✅ Successfully configured DB.")
 
 	Database = db
-	// db.AutoMigrate(&model.Language{})
+	// db.AutoMigrate(&{})
 	return
 }

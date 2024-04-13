@@ -1,8 +1,8 @@
 package main
 
 import (
+	"black_mirror/src/api"
 	"black_mirror/src/config"
-	"net/http"
 )
 
 func main() {
@@ -11,7 +11,8 @@ func main() {
 
 	if db != nil {
 
-		http.ListenAndServe("localhost:8000", http.NewServeMux())
+		server := api.NewServer(8000)
+		server.Run()
 
 	} else {
 		panic(err)
