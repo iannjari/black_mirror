@@ -10,7 +10,7 @@ import (
 
 var Database *gorm.DB
 
-func GetDB(host string, port int, user string, password string, dbname string) (db *gorm.DB, err error) {
+func ConfigureDb(host string, port int, user string, password string, dbname string) (db *gorm.DB, err error) {
 	cnn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s",
 		host, fmt.Sprint(port), user, password,
 		dbname)

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 type Server struct {
@@ -38,6 +39,6 @@ func NewServer(address int) (server *Server) {
 func sayHello() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 
-		json.NewEncoder(w).Encode("Hello You!")
+		json.NewEncoder(w).Encode(os.Getenv("OUR_STRING"))
 	}
 }
